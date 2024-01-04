@@ -43,6 +43,7 @@ def throttle_generator(generator, stream_interval):
 def read_config(config_path: Path):
     with open(config_path, 'r') as f:
         config = json.load(f)
+    
     use_gpt_attention_plugin = config['plugin_config']['gpt_attention_plugin']
     remove_input_padding = config['plugin_config']['remove_input_padding']
     dtype = config['builder_config']['precision']

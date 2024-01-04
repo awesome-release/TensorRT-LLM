@@ -56,8 +56,8 @@ def main(build_type: str = "Release",
     os.chdir(project_dir)
     build_run = partial(run, shell=True, check=True)
 
-    # if not (project_dir / "3rdparty/cutlass/.git").exists():
-    #     build_run('git submodule update --init --recursive')
+    if not (project_dir / "3rdparty/cutlass/.git").exists():
+        build_run('git submodule update --init --recursive')
 
     requirements_filename = "requirements-windows.txt" if platform.system(
     ) == "Windows" else "requirements.txt"
