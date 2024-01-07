@@ -43,6 +43,6 @@ repos:
     hooks:
     -   id: codespell
         args:
-        - --skip=".git,3rdparty"
+        - --skip=".git"
         - --exclude-file=examples/whisper/tokenizer.py
         - --ignore-words-list=rouge,inout,atleast,strat
